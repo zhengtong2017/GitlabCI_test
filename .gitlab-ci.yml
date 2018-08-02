@@ -1,0 +1,18 @@
+before_script:
+  - pwd
+  
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script: mvn clean package -Dmaven.test.skip=true 
+  artifacts:
+    name: demo
+    paths:
+      - target/demo-0.0.1-SNAPSHOT.jar
+
+deploy:
+  stage: deploy
+  script: java -jar target/demo-0.0.1-SNAPSHOT.jar --server.port=8081

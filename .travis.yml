@@ -6,6 +6,6 @@ after_script:
   - git init
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
-  - git add .
+  - git add demo-0.0.1-SNAPSHOT.jar
   - git commit -m "Update tools"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}

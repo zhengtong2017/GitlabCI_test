@@ -2,7 +2,7 @@ language: java
 script: mvn package
 
 after_script:
-  - cd ./dist
+  - cd ./target
   - git init
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"

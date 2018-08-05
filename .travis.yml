@@ -16,12 +16,6 @@ aftersuccess: true
 
 afterfailure: true
 
-#before_deploy: true
-
-#deploy: true
-
-#after_deploy: true
-
 after_script:
   - ls
   - cd ./target

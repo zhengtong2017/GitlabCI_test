@@ -1,5 +1,26 @@
-language: java 
+# language字段指定了默认运行环境，若为java，则默认通过maven打包
+language: java
+
+# 安装需要的依赖
+before_install: true
+
+# install字段用来指定安装脚本,不需要安装，即跳过安装阶段，就直接设为true
+install: true
+
+before_script: true
+
+# script字段用来指定构建或测试脚本。若有多个脚本，如果command1失败，command2会继续执行。但是，整个构建阶段的状态是失败的
 script: mvn package
+
+aftersuccess: true
+
+afterfailure: true
+
+before_deploy: true
+
+deploy: true
+
+after_deploy: true
 
 after_script:
   - ls
